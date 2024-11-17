@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PokemonsComponent } from './pokemons.component';
+import { provideRouter } from '@angular/router';
+import PokemonsComponent from './pokemons.component';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('PokemonsComponent', () => {
   let component: PokemonsComponent;
@@ -8,9 +10,13 @@ describe('PokemonsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PokemonsComponent]
-    })
-    .compileComponents();
+      imports: [PokemonsComponent],
+      providers: [
+        provideRouter([]),
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonsComponent);
     component = fixture.componentInstance;

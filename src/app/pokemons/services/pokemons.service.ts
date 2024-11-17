@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { PokeAPIResponse, SimplePokemon } from '../interfaces';
 import { Pokemon } from '../interfaces/pokemon.interface';
 
